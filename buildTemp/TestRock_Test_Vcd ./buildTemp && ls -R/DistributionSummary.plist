@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TestRock.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>8A88C68E87C2E00216DF31216FA91859B7CD93AD</string>
+				<key>dateExpires</key>
+				<string>24/10/2018</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>F3A8R3FAA7.cn.com.schneider-electric.EDisco</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>F3A8R3FAA7</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>F3A8R3FAA7.cn.com.schneider-electric.EDisco</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>TestRock.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>5d974327-d117-434d-a602-f5542232a0a2</string>
+				<key>name</key>
+				<string>hocEDisco</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>F3A8R3FAA7</string>
+				<key>name</key>
+				<string></string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

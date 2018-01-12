@@ -1,24 +1,16 @@
 language: objective-c
-env:
-  -APPNAME='TestRock_Test_V1.1.1'
-  -description="des123"
 
-  -OUTPUTDIR="./buildTemp"
-  -SCHEMETEST="TestRock_Test"
-  -SCHEMEPROD="TestRock_Test"
-  -APP_PROJECTPATH="./TestRock/TestRock.xcodeproj"
-  -PLIST_PATH='./TestRock/TestRock/Info.plist'
 install:
-  - npm install
+  # - npm install
+
 before_script:
   - chmod +x ./TestRock/RockCer/add-key.sh
   - cd ./TestRock/RockCer
   - ./add-key.sh
   - cd -
-script:
-  -xcodebuild -project "$APP_PROJECTPATH" -scheme "$SCHEMETEST" archive -archivePath "$OUTPUTDIR/$APPNAME.xcarchive" -quiet
-  -xcodebuild -exportArchive -archivePath "$OUTPUTDIR/$APPNAME.xcarchive" -exportPath "$OUTPUTDIR/$APPNAME" -exportOptionsPlist "exportTestOptions.plist" -quiet
-  curl -F "file=@$OUTPUTDIR/$APPNAME/$SCHEMETEST.ipa" -F "uKey= 24af41e3b5e5117e773a733378aefa29" -F "_api_key= 0691c7489e57a5158796f6e1e7e988bd" -F "installType=2" -F "password=123456" -F "updateDescription=$description" http://qiniu-storage.pgyer.com/apiv1/app/upload
 
-  - cd ./buildIOSTemp && ls -R
+script:
+  - chmod +x ./buildTestIpa.sh
+  - ./buildTestIpa.sh
+  - cd ./buildTemp && ls -R
   # - curl
