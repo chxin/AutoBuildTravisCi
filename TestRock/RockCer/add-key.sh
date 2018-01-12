@@ -3,7 +3,7 @@
 # rm -f ~/Library/MobileDevice/Provisioning\ Profiles/hocEDisco.mobileprovision
 
 security create-keychain -p travis ios-build.keychain
-#security default-keychain -s ios-build.keychain
+security default-keychain -s ios-build.keychain
 
 security unlock-keychain -p travis ios-build.keychain
 # security set-keychain-setting -t 3600 -l ~/Library/Keychains/ios-build.keychain

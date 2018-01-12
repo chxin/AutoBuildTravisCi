@@ -1,14 +1,16 @@
 language: objective-c
-install: 
-before_script:
-- chmod +x ./TestRock/RockCer/add-key.sh
-- cd ./TestRock/RockCer
-- "./add-key.sh"
-- cd -
-script:
-- chmod +x ./buildTestIpa.sh
-- "./buildTestIpa.sh"
-- cd ./buildTemp && ls -R
+
 before_install:
-- openssl aes-256-cbc -K $encrypted_b355b4971651_key -iv $encrypted_b355b4971651_iv
-  -in ios_distribution.cer.enc -out ./TestRock/RockCer/ios_distribution.cer -d
+  - openssl aes-256-cbc -K $encrypted_b355b4971651_key -iv $encrypted_b355b4971651_iv -in ios_distribution.cer.enc -out ./TestRock/RockCer/ios_distribution.cer -d
+
+install: 
+
+before_script:
+  - chmod +x ./TestRock/RockCer/add-key.sh
+  - cd ./TestRock/RockCer
+  - "./add-key.sh"
+  - cd -
+script:
+  - chmod +x ./buildTestIpa.sh
+  - "./buildTestIpa.sh"
+  - cd ./buildTemp && ls -R | grep ipa
