@@ -1,16 +1,14 @@
 language: objective-c
-
-install:
-  # - npm install
-
+install: 
 before_script:
-  - chmod +x ./TestRock/RockCer/add-key.sh
-  - cd ./TestRock/RockCer
-  - ./add-key.sh
-  - cd -
-
+- chmod +x ./TestRock/RockCer/add-key.sh
+- cd ./TestRock/RockCer
+- "./add-key.sh"
+- cd -
 script:
-  - chmod +x ./buildTestIpa.sh
-  - ./buildTestIpa.sh
-  - cd ./buildTemp && ls -R
-  # - curl
+- chmod +x ./buildTestIpa.sh
+- "./buildTestIpa.sh"
+- cd ./buildTemp && ls -R
+before_install:
+- openssl aes-256-cbc -K $encrypted_b355b4971651_key -iv $encrypted_b355b4971651_iv
+  -in ios_distribution.cer.enc -out ./TestRock/RockCer/ios_distribution.cer -d

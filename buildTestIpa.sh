@@ -10,13 +10,14 @@ SCHEMEPROD="TestRock_Test"
 APP_PROJECTPATH="./TestRock/TestRock.xcodeproj"
 PLIST_PATH='./TestRock/TestRock/Info.plist'
 
-echo "Please enter the version?like the 1.0.0"
-read version
-while([[ $version == '' ]])
-do
-echo "Error! Please enter the version?like the 1.0.0"
-read version
-done
+# echo "Please enter the version?like the 1.0.0"
+# read version
+# while([[ $version == '' ]])
+# do
+# echo "Error! Please enter the version?like the 1.0.0"
+# read version
+# done
+version=1.1.1
 
 APPNAME='TestRock_Test_V'$version
 
