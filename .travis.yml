@@ -9,6 +9,3 @@ script:
 - chmod +x ./buildTestIpa.sh
 - "./buildTestIpa.sh"
 - cd ./buildTemp && ls -R
-before_install:
-- openssl aes-256-cbc -K $encrypted_b355b4971651_key -iv $encrypted_b355b4971651_iv
-  -in ios_distribution.cer.enc -out ./TestRock/RockCer/ios_distribution.cer -d
