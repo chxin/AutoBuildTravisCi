@@ -11,7 +11,6 @@ before_script:
   - "./add-key.sh"
   - cd -
 script:
-
-  - chmod +x ./buildTestIpa.sh
-  - "./buildTestIpa.sh"
+  - xcodebuild -project "./TestRock/TestRock.xcodeproj" -scheme "TestRock" archive -archivePath "./buildTemp/TestRock_Test_V.xcarchive" -quiet
+  - xcodebuild -exportArchive -archivePath "./buildTemp/TestRock_Test_V.xcarchive" -exportPath "./buildTemp/TestRock_Test_V" -exportOptionsPlist "exportTestOptions.plist" -quiet
   - cd ./buildTemp && ls -R | grep ipa

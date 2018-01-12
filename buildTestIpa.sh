@@ -26,7 +26,8 @@ APPNAME='TestRock_Test_V'$version
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${version}" ${PLIST_PATH}
 rm "$OUTPUTDIR/$APPNAME/$SCHEMETEST.ipa"
 
-# xcodebuild -project "./TestRock/TestRock.xcodeproj" -scheme "TestRock_Test" archive -archivePath "./buildTemp/TestRock_Test_V.xcarchive" -quiet
+# xcodebuild -project "./TestRock/TestRock.xcodeproj" -scheme "TestRock" archive -archivePath "./buildTemp/TestRock_Test_V.xcarchive" -quiet
+# xcodebuild -exportArchive -archivePath "./buildTemp/TestRock_Test_V.xcarchive" -exportPath "./buildTemp/TestRock_Test_V" -exportOptionsPlist "exportTestOptions.plist" -quiet
 
 xcodebuild -project "$APP_PROJECTPATH" -scheme "$SCHEMETEST" archive -archivePath "$OUTPUTDIR/$APPNAME.xcarchive" -quiet
 xcodebuild -exportArchive -archivePath "$OUTPUTDIR/$APPNAME.xcarchive" -exportPath "$OUTPUTDIR/$APPNAME" -exportOptionsPlist "exportTestOptions.plist" -quiet
