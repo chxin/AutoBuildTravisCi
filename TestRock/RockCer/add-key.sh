@@ -8,8 +8,8 @@ security default-keychain -s ios-build.keychain
 security unlock-keychain -p travis ios-build.keychain
 # security set-keychain-setting -t 3600 -l ~/Library/Keychains/ios-build.keychain
 
-security import ./ios_distribution.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
-security import ./dist.p12 -k ~/Library/Keychains/ios-build.keychain -P 123456 -T /usr/bin/codesign
+security import ./ios_distribution.cer -A -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
+security import ./dist.p12 -A -k ~/Library/Keychains/ios-build.keychain -P 123456 -T /usr/bin/codesign
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 cp ./profile/hocEDisco.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
