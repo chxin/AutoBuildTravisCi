@@ -10,7 +10,7 @@ security unlock-keychain -p travis ios-build.keychain
 
 security import ./ios_distribution.cer -A -k ~/Library/Keychains/ios-build.keychain 
 security import ./dist.p12 -A -k ~/Library/Keychains/ios-build.keychain -P 123456 
-security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build
+security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 cp ./profile/hocEDisco.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
